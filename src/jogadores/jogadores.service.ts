@@ -53,7 +53,7 @@ export class JogadoresService {
 
   async consultarTodosJogadores(): Promise<iJogador[]> {
     try {
-      return await this.jogadorModel.find().populate('categoria').exec();
+      return await this.jogadorModel.find().exec();
     } catch (error) {
       this.logger.error(`error: ${JSON.stringify(error.message)}`);
       throw new RpcException(error.message);
